@@ -18,10 +18,10 @@ use Illuminate\Support\Facades\Route;
 // ══════════════════════════════════════════════════════
 
 Route::get('/', fn () => redirect()->route('login'));
+Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
 
 // Guest-only (alumni)
 Route::middleware('guest:alumni')->group(function () {
-    Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
     Route::post('/login', [AuthController::class, 'login'])->name('login.post');
 
     Route::get('/daftar', [RegisterController::class, 'showRegister'])->name('register');
@@ -69,9 +69,10 @@ Route::middleware('auth:alumni')->group(function () {
 
 Route::prefix('admin')->name('admin.')->group(function () {
 
+    Route::get('/login', [AdminAuthController::class, 'showLogin'])->name('login');
+
     // Guest-only (admin)
     Route::middleware('guest:admin')->group(function () {
-        Route::get('/login', [AdminAuthController::class, 'showLogin'])->name('login');
         Route::post('/login', [AdminAuthController::class, 'login'])->name('login.post');
     });
 

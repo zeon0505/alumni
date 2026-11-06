@@ -9,20 +9,27 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
-    public function showLogin()
+    public function showLogin(Request $request)
     {
+        if (Auth::guard('alumni')->check()) {
+            Auth::guard('alumni')->logout();
+            $request->session()->invalidate();
+            $request->session()->regenerateToken();
+        }
+
         return view('auth.login');
     }
 
     public function login(Request $request)
     {
         $credentials = $request->validate([
-            'nim'      => ['required', 'string'],
+            'nim' => ['required', 'string'],
             'password' => ['required', 'string'],
         ]);
 
         if (Auth::guard('alumni')->attempt($credentials, $request->boolean('remember'))) {
             $request->session()->regenerate();
+
             return redirect()->intended(route('dashboard'));
         }
 
@@ -36,6 +43,7 @@ class AuthController extends Controller
         Auth::guard('alumni')->logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
+
         return redirect()->route('login');
     }
 
@@ -47,9 +55,9 @@ class AuthController extends Controller
     public function lupaPassword(Request $request)
     {
         $request->validate([
-            'nim'                  => ['required', 'string'],
-            'tanggal_lahir'        => ['required', 'date'],
-            'password'             => ['required', 'string', 'min:6', 'confirmed'],
+            'nim' => ['required', 'string'],
+            'tanggal_lahir' => ['required', 'date'],
+            'password' => ['required', 'string', 'min:6', 'confirmed'],
         ]);
 
         $alumni = Alumni::where('nim', $request->nim)

@@ -27,6 +27,7 @@ class Alumni extends Authenticatable
         'kabupaten',
         'alamat',
         'sertifikat_kompetensi',
+        'file_sertifikat',
         'sumber_dana_kuliah',
         'telepon',
         'email_pribadi',
@@ -44,7 +45,7 @@ class Alumni extends Authenticatable
     protected function casts(): array
     {
         return [
-            'password'      => 'hashed',
+            'password' => 'hashed',
             'tanggal_lahir' => 'date',
         ];
     }

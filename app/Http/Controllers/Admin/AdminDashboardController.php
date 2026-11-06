@@ -11,17 +11,17 @@ class AdminDashboardController extends Controller
 {
     public function index()
     {
-        $totalAlumni     = Alumni::count();
-        $kuesionerAktif  = Kuesioner::where('aktif', true)->first();
-        $totalIsi        = 0;
-        $totalBelumIsi   = 0;
+        $totalAlumni = Alumni::count();
+        $kuesionerAktif = Kuesioner::where('aktif', true)->first();
+        $totalIsi = 0;
+        $totalBelumIsi = 0;
 
         if ($kuesionerAktif) {
-            $totalIsi      = JawabanKuesioner::where('kuesioner_id', $kuesionerAktif->id)->count();
+            $totalIsi = JawabanKuesioner::where('kuesioner_id', $kuesionerAktif->id)->count();
             $totalBelumIsi = $totalAlumni - $totalIsi;
         }
 
-        $alumniTerbaru = Alumni::latest()->take(5)->get();
+        $alumniTerbaru = Alumni::with('dataAkademik')->latest()->take(5)->get();
 
         return view('admin.dashboard', compact(
             'totalAlumni',
