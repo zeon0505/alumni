@@ -8,6 +8,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DataAkademikController;
 use App\Http\Controllers\KuisionerController;
+use App\Http\Controllers\PanduanController;
 use App\Http\Controllers\PerjalananKarirController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
@@ -19,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', fn () => redirect()->route('login'));
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
+Route::get('/panduan', [PanduanController::class, 'index'])->name('panduan');
 
 // Guest-only (alumni)
 Route::middleware('guest:alumni')->group(function () {
