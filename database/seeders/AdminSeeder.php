@@ -20,5 +20,13 @@ class AdminSeeder extends Seeder
                 'password' => Hash::make('St4!m4s@Adm!n#2026$IK4M4S'),
             ]
         );
+
+        Admin::updateOrCreate(
+            ['email' => 'yoga.ikamas@staimas.ac.id'],
+            [
+                'name' => 'Yoga',
+                'password' => Hash::make('Y0g4@St4!m4s#2026'),
+            ]
+        );
     }
 }
