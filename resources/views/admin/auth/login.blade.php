@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Administrator — SIFORAL STAIMAS Wonogiri</title>
+    <title>Login Administrator — IKAMAS STAIMAS Wonogiri</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="bg-gradient-to-b from-slate-50 via-slate-100 to-emerald-50/30 min-h-screen flex flex-col items-center justify-center p-4 antialiased text-slate-800">

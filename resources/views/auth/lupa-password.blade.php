@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reset Password Alumni — SIFORAL STAIMAS Wonogiri</title>
+    <title>Reset Password Alumni — IKAMAS STAIMAS Wonogiri</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="bg-gradient-to-b from-slate-50 via-slate-100 to-emerald-50/30 min-h-screen flex flex-col items-center justify-center p-4 antialiased text-slate-800">
@@ -17,7 +17,7 @@
             </div>
             <p class="text-[11px] text-slate-400 font-semibold uppercase tracking-widest">Sekolah Tinggi Agama Islam</p>
             <h2 class="text-2xl font-extrabold text-[#8B7355] tracking-wide">STAIMAS WONOGIRI</h2>
-            <p class="text-xs text-[#1B5E20] font-bold tracking-wider mt-1 uppercase">Sistem Informasi Alumni (SIFORAL)</p>
+            <p class="text-xs text-[#1B5E20] font-bold tracking-wider mt-1 uppercase">Ikatan Alumni STAIMAS (IKAMAS)</p>
         </div>
 
         {{-- Main Card --}}
