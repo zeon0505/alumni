@@ -64,16 +64,6 @@
 <body class="bg-gradient-to-br from-slate-50 via-blue-50 to-green-50 min-h-screen flex items-center justify-center p-4">
     
     <div class="max-w-2xl w-full">
-        {{-- Back Button --}}
-        <div class="mb-6">
-            <a href="{{ url()->previous() }}" class="inline-flex items-center gap-2 text-slate-600 hover:text-[#1B5E20] transition-colors">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
-                </svg>
-                <span class="text-sm font-medium">Kembali</span>
-            </a>
-        </div>
-
         {{-- Main Card --}}
         <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-12 relative overflow-hidden">
             
